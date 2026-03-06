@@ -3,8 +3,24 @@
 import Link from "next/link";
 import { Github, ArrowRight, Shield, Code, Zap, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import { FeatureCard } from "@/components/Landing/FeatureCard";
+import { HeroMockup } from "@/components/Landing/HeroMockup";
+import { signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 export default function LandingPage() {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  const handleSignIn = async () => {
+    // if (session) {
+    // console.log(session)
+    // router.push("/dashboard");
+    // } else {
+    await signIn("github", { callbackUrl: "/dashboard" });
+    // }
+  };
   return (
     <div className="flex flex-col min-h-screen bg-black text-white selection:bg-white selection:text-black">
       {/* Navigation */}
@@ -38,30 +54,16 @@ export default function LandingPage() {
             technical debt, and complex code patterns using state-of-the-art AI.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/dashboard" className="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-zinc-200 transition-all flex items-center gap-2 text-lg">
+            <button
+              onClick={handleSignIn}
+              className="px-8 py-4 bg-white text-black rounded-lg font-semibold hover:bg-zinc-200 transition-all flex items-center gap-2 text-lg"
+            >
               <Github className="w-5 h-5" /> Sign in with GitHub
-            </Link>
+            </button>
           </div>
         </motion.div>
 
-        {/* Mockup Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-20 w-full max-w-6xl mx-auto px-4"
-        >
-          <div className="rounded-xl border border-white/10 bg-zinc-900/50 p-2 glass">
-            <div className="rounded-lg overflow-hidden bg-black aspect-video flex items-center justify-center border border-white/5">
-              <div className="text-zinc-600 flex flex-col items-center gap-4">
-                <div className="w-16 h-16 opacity-20 bg-white/10 rounded-full flex items-center justify-center">
-                  <Github className="w-8 h-8 text-white" />
-                </div>
-                <p className="text-sm font-mono uppercase tracking-widest opacity-40">Dashboard Preview</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <HeroMockup />
       </section>
 
       {/* Features Section */}
@@ -103,11 +105,3 @@ export default function LandingPage() {
   );
 }
 
-function FeatureCard({ title, description }: { title: string, description: string }) {
-  return (
-    <div className="p-8 rounded-2xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/50 transition-all group">
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-zinc-400 leading-relaxed">{description}</p>
-    </div>
-  );
-}

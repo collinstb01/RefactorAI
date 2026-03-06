@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.yellow_btn {
+  background-color: #F2A700;
+  color: white;
+  padding: 20px 50px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.white_btn {
+  background-color: #fff;
+  color: black;
+  padding: 20px 50px;
+  border-radius: 5px;
+  font-weight: 500;
+  border: 1px solid #323232;
+}
+
+.border {
+  border: 1.11px solid #FFFFFF33;
+  border-radius: 22.12px;
+}
+
+.border2 {
+  border: 1.11px solid #FFFFFF33;
+  border-radius: 22.12px;
+}
+
+.border3 {
+  border: 1px solid #0015193D;
+  border-radius: 22.12px;
+}
+
+.circle {
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.line {
+  width: 2px;
+  height: 18px;
+  background-color: white;
+  position: absolute;
+  z-index: -10px;
+  /* border: 1px dotted #fff; */
+}
+
+.line1 {
+  top: 100px;
+  left: 45px;
+}
+
+.line2 {
+  top: 150px;
+  left: 45px;
+}
+
+.line3 {
+  top: 200px;
+  left: 45px;
+}
+
+.line4 {
+  top: 250px;
+  left: 45px;
+}
+
+.line5 {
+  top: 300px;
+  left: 45px;
+}
+
+.line6 {
+  top: 350px;
+  left: 45px;
+}
+
+.line7 {
+  top: 400px;
+  left: 45px;
+}
+
+.line8 {
+  top: 450px;
+  left: 45px;
+}
+
+.line9 {
+  top: 500px;
+  left: 45px;
+}
+/* Apply this style to the section with the black and blue background */
+.background-gradient {
+  background: radial-gradient(at bottom right, #173e45, #000000 40%);
+  /* Alternatively, you can adjust the blue to protrude more or less by changing the position and percentages */
+}
