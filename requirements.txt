@@ -1,1 +1,15 @@
--r backend/requirements.txt
+fastapi
+uvicorn
+sqlalchemy
+asyncpg
+alembic
+pydantic
+pydantic-settings
+httpx
+openai
+tiktoken
+python-multipart
+PyJWT
+bcrypt
+python-dotenv
+beautifulsoup4
