@@ -425,8 +425,11 @@ async def get_all_analysis_history(db: AsyncSession, token: str) -> list:
     if not user:
         raise UnauthorizedException("Invalid token")
         
+    from sqlalchemy.orm import joinedload
+    
     result = await db.execute(
         select(Analysis)
+        .options(joinedload(Analysis.repository))
         .join(Repository)
         .where(Repository.user_id == user.id)
         .order_by(Analysis.created_at.desc())
