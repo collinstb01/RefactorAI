@@ -52,15 +52,6 @@ export function InsightCard({ insight }: { insight: any }) {
                 <p className="text-[10px] uppercase font-black text-zinc-500 mb-1 tracking-tighter">AI Fix Suggestion</p>
                 <p className="text-sm font-semibold text-blue-400">{insight.fix}</p>
             </div>
-
-            <div className="mt-6 flex justify-between items-center pt-6 border-t border-white/5">
-                <button className="text-xs font-bold text-zinc-500 hover:text-white transition-colors flex items-center gap-1">
-                    Dismiss <AlertTriangle className="w-3 h-3" />
-                </button>
-                <Link href={`/repo/${insight.repo}`} className="text-xs font-bold text-white hover:text-blue-400 transition-colors flex items-center gap-1 group/btn">
-                    View Context <ArrowUpRight className="w-3 h-3 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-all" />
-                </Link>
-            </div>
         </div>
     );
 }
