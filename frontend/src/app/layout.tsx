@@ -16,7 +16,34 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "RefactorAI — Your codebase, understood",
-  description: "AI-powered code analysis for GitHub repositories",
+  description: "AI-powered code analysis, architecture insights, and refactoring suggestions for GitHub repositories.",
+  keywords: ["AI", "Code Analysis", "Refactoring", "GitHub", "Software Architecture"],
+  authors: [{ name: "RefactorAI Team" }],
+  openGraph: {
+    title: "RefactorAI — Your codebase, understood",
+    description: "AI-powered code analysis, architecture insights, and refactoring suggestions for GitHub repositories.",
+    url: "https://refactorai.devtb.xyz",
+    siteName: "RefactorAI",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "RefactorAI Dashboard Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RefactorAI — Your codebase, understood",
+    description: "AI-powered code analysis, architecture insights, and refactoring suggestions for GitHub repositories.",
+    images: ["/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 import { Toaster } from "sonner";
