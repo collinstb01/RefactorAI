@@ -42,3 +42,10 @@ class AnalyzeRepoPayload(BaseModel):
     repo_url: str
     token: str
     type: AnalysesType
+
+class VSCodeFilePayload(BaseModel):
+    path: str
+    content: str
+
+class VSCodeAnalyzePayload(BaseModel):
+    files: list[VSCodeFilePayload]
